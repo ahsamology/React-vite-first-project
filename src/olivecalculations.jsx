@@ -135,7 +135,7 @@ function App() {
       </div>
 
 <div>
-<div className="px-4 mt-4  p-2 bg-white shadow border rounded-md "> 
+<div className="px-4 mt-4 p-2 bg-white shadow border rounded-md"> 
 
 <p className="text-green-600  text-2xl mb-4 underline">Summary:</p>
 
