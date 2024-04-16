@@ -66,33 +66,62 @@ function App() {
 
   }
 
+  function checkStatus(number) {
+    if (number > 32) {
+      return 'Pass'
+    }
+    else {
+      return 'Fail'
+    }
+  }
+
+  function overallStatus(number) {
+    if (number > 165)  {
+      return 'Pass'
+    }
+    else {
+      return 'Fail'
+    }
+  }
+
   return (
     <div className="container pt-20 mt-14 justify-center items-center content-center">
       <div className="relative flex justify-around font-bold text-2xl px-3 py-2 text-blue-900">
         <div className="absolute flex gap-5 -top-20 border rounded shadow px-3 py-2 mb-10">
           <p >Student Name</p>
-          <input type="text" className="rounded border shadow-black text-center pl-2 w-64" />
+          <input type="text" className="rounded border shadow-black text-center pl-2 w-56" />
         </div>
-        <div >
-          <p className="mb-10 w-80">Subject Name</p>
-
-          <p className="mb-3 w-80">English</p>
-        </div>
-
-        <div>
-          <p className="mb-10 w-80">Total Marks</p>
-
-          <input value={number1} type="number" onChange={handleNumber1Change} className="rounded border shadow-black pl-2" />
-        </div>
-        <div>
-          <p className="mb-10 w-80">Obtained Marks</p>
-
-          <input value={number6} type="number" onChange={handleNumber6Change}  className="rounded border shadow-black pl-2" />
+        <div className="flex gap-11">
+          <div >
+            <p className="mb-10 w-56">Subject Name</p>
+          </div>
+          <div>
+            <p className="mb-10 w-56">Total Marks</p>
+          </div>
+          <div>
+            <p className="mb-10 w-56">Obtained Marks</p>
+          </div>
+          <div>
+            <p className="mb-10 w-56 ">Status</p>
+          </div>
         </div>
       </div>
       <div className="relative flex justify-around font-bold text-2xl px-3 py-2 text-blue-900">
         <div >
-          <p className="mb-3 w-80">Urdu</p>
+          <p className="mb-3 w-56">English</p>
+        </div>
+
+        <div>
+          <input value={number1} type="number" onChange={handleNumber1Change} className="rounded border shadow-black pl-2" />
+        </div>
+        <div>
+          <input value={number6} type="number" onChange={handleNumber6Change} className="rounded border shadow-black pl-2" />
+        </div>
+        <div> <p>{checkStatus(number6)}</p></div>
+      </div>
+      <div className="relative flex justify-around font-bold text-2xl px-3 py-2 text-blue-900">
+        <div >
+          <p className="mb-3 w-56">Urdu</p>
         </div>
 
         <div>
@@ -101,10 +130,11 @@ function App() {
         <div>
           <input value={number7} type="number" onChange={handleNumber7Change} className="rounded border shadow-black pl-2" />
         </div>
+        <div> <p>{checkStatus(number7)}</p></div>
       </div>
       <div className="relative flex justify-around font-bold text-2xl px-3 py-2 text-blue-900">
         <div >
-          <p className="mb-3 w-80">Math</p>
+          <p className="mb-3 w-56">Math</p>
         </div>
 
         <div>
@@ -113,10 +143,12 @@ function App() {
         <div>
           <input value={number8} type="number" onChange={handleNumber8Change} className="rounded border shadow-black pl-2" />
         </div>
+        <div> <p>{checkStatus(number8)}</p></div>
+
       </div>
       <div className="relative flex justify-around font-bold text-2xl px-3 py-2 text-blue-900">
         <div >
-          <p className="mb-3 w-80">Chemistry</p>
+          <p className="mb-3 w-56">Chemistry</p>
         </div>
 
         <div>
@@ -125,10 +157,12 @@ function App() {
         <div>
           <input value={number9} type="number" onChange={handleNumber9Change} className="rounded border shadow-black pl-2" />
         </div>
+        <div> <p>{checkStatus(number9)}</p></div>
+
       </div>
       <div className="relative flex justify-around font-bold text-2xl px-3 py-2 text-blue-900">
         <div >
-          <p className="mb-3 w-80">Biology</p>
+          <p className="mb-3 w-56">Biology</p>
         </div>
 
         <div>
@@ -137,11 +171,13 @@ function App() {
         <div>
           <input value={number10} type="number" onChange={handleNumber10Change} className="rounded border shadow-black pl-2" />
         </div>
+        <div> <p>{checkStatus(number10)}</p></div>
+
       </div>
-      <hr className="my-4"/>
+      <hr className="my-4" />
       <div className="relative flex justify-around font-bold text-2xl px-3 py-2 text-blue-900">
         <div >
-          <p className="mb-3 w-80">Total Marks</p>
+          <p className="mb-3 w-56">Total Marks</p>
         </div>
 
         <div>
@@ -150,14 +186,16 @@ function App() {
         <div>
           <input value={sum2} disabled className="rounded border shadow-black pl-2" />
         </div>
+        <div> <p>{overallStatus(sum2)}</p></div>
+
       </div>
       <div className="mt-3 mb-5 w-full flex justify-center">
-      <button onClick={handleSum} className="bg-green-600 px-6 py-2 text-lg  font-semibold rounded-xl shadow text-white mx-auto ">
-        Check Result
-      </button>
+        <button onClick={handleSum} className="bg-green-600 px-6 py-2 text-lg  font-semibold rounded-xl shadow text-white mx-auto ">
+          Check Result
+        </button>
       </div>
     </div>
-    
+
   )
 }
 
