@@ -15,11 +15,7 @@ function App() {
 
   const [passingPercentage, setPassingPercentage] = useState(33)
 
-  const [percent1, setPercent1] = useState(0)
-  const [percent2, setPercent2] = useState(0)
-  const [percent3, setPercent3] = useState(0)
-  const [percent4, setPercent4] = useState(0)
-  const [percent5, setPercent5] = useState(0)
+ 
 
 
   const [sum1, setSum1] = useState(0)
@@ -66,19 +62,13 @@ function App() {
     setNumber10(event.target.value)
   }
 
-  function handleSum() {
-    let calPercent16 = Number(number6) / Number(number1) * 100
-    let calPercent27 = Number(number7) / Number(number2) * 100
-    let calPercent38 = Number(number8) / Number(number3) * 100
-    let calPercent49 = Number(number9) / Number(number4) * 100
-    let calPercent510 = Number(number10) / Number(number5) * 100
-
-    setPercent1(calPercent16)
-    setPercent2(calPercent27)
-    setPercent3(calPercent38)
-    setPercent4(calPercent49)
-    setPercent5(calPercent510)
-
+  function handlePercentage(num1, num2) {
+    if (num1 && num2) { 
+      let percentage = Number(num2 / num1 * 100) .toFixed(2)
+      return percentage
+    }
+    
+  
   }
 
   function handleSum() {
@@ -151,7 +141,7 @@ function App() {
         <p className="mb-3">English</p>
         <input value={number1} type="number" onChange={handleNumber1Change} className="rounded border shadow-black pl-2" />
         <input value={number6} type="number" onChange={handleNumber6Change} className="rounded border shadow-black pl-2" />
-        <input value={number6 / number1 * 100}  disabled className="rounded border shadow-black pl-2" />
+        <input value={handlePercentage(number1, number6)}   disabled className="rounded border shadow-black pl-2" />
 
         <p className={pickColor(number1, number6)}>{checkStatus(number1, number6)}</p>
       </div>
@@ -160,7 +150,7 @@ function App() {
         <p className="mb-3 w-56">Urdu</p>
         <input value={number2} type="number" onChange={handleNumber2Change} className="rounded border shadow-black pl-2" />
         <input value={number7} type="number" onChange={handleNumber7Change} className="rounded border shadow-black pl-2" />
-        <input value={number7 / number2 * 100} disabled className="rounded border shadow-black pl-2" />
+        <input value={handlePercentage(number2, number7)} disabled className="rounded border shadow-black pl-2" />
         <p className={pickColor(number2, number7)}>{checkStatus(number2, number7)}</p>
       </div>
 
@@ -168,7 +158,7 @@ function App() {
         <p className="mb-3 w-56">Math</p>
         <input value={number3} type="number" onChange={handleNumber3Change} className="rounded border shadow-black pl-2" />
         <input value={number8} type="number" onChange={handleNumber8Change} className="rounded border shadow-black pl-2" />
-        <input value={number8 / number3 * 100} disabled className="rounded border shadow-black pl-2" />
+        <input value={handlePercentage(number3, number8)} disabled className="rounded border shadow-black pl-2" />
         <p className={pickColor(number3, number8)}>{checkStatus(number3, number8)}</p>
       </div>
 
@@ -176,7 +166,7 @@ function App() {
         <p className="mb-3 w-56">Chemistry</p>
         <input value={number4} type="number" onChange={handleNumber4Change} className="rounded border shadow-black pl-2" />
         <input value={number9} type="number" onChange={handleNumber9Change} className="rounded border shadow-black pl-2" />
-        <input value={number9 / number4 * 100} disabled className="rounded border shadow-black pl-2" />
+        <input value={handlePercentage(number4, number9)} disabled className="rounded border shadow-black pl-2" />
         <p className={pickColor(number4, number9)}>{checkStatus(number4, number9)}</p>
       </div>
 
@@ -184,7 +174,7 @@ function App() {
         <p className="mb-3 w-56">Biology</p>
         <input value={number5} type="number" onChange={handleNumber5Change} className="rounded border shadow-black pl-2" />
         <input value={number10} type="number" onChange={handleNumber10Change} className="rounded border shadow-black pl-2" />
-        <input value={number10 / number5 * 100} disabled className="rounded border shadow-black pl-2" />
+        <input value={handlePercentage(number5, number10)} disabled className="rounded border shadow-black pl-2" />
         <p className={pickColor(number5, number10)}>{checkStatus(number5, number10)}</p>
       </div>
 
@@ -194,7 +184,7 @@ function App() {
         <p className="mb-3 w-56">Total Marks</p>
         <input value={sum1} disabled className="rounded border shadow-black pl-2" />
         <input value={sum2} disabled className="rounded border shadow-black pl-2" />
-        <input value={sum2 / sum1 * 100} disabled className="rounded border shadow-black pl-2" />
+        <input value={handlePercentage(sum1, sum2)} disabled className="rounded border shadow-black pl-2" />
         <p className={sum2 > 165 ? "text-green-500" : "text-red-500"}>{overallStatus(sum2)}</p>
       </div>
 
