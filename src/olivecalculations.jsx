@@ -79,7 +79,7 @@ function App() {
         </div>
         <div>
           <p className="mb-3">Net Profit </p>
-          <input value={sum1} disabled className="rounded border shadow-black pl-2"/>
+          <input value={sum1} disabled className="rounded border shadow-black pl-2" />
         </div>
       </div>
       <div className="relative mt-20 flex justify-around font-bold text-2xl border px-3 py-10 text-blue-900">
@@ -96,7 +96,7 @@ function App() {
         </div>
         <div>
           <p className="mb-3">Net Profit </p>
-          <input value={sum2} disabled className="rounded border shadow-black pl-2"/>
+          <input value={sum2} disabled className="rounded border shadow-black pl-2" />
         </div>
       </div>
       <div className="relative mt-20 flex justify-around font-bold text-2xl border px-3 py-10 text-blue-900">
@@ -113,7 +113,7 @@ function App() {
         </div>
         <div>
           <p className="mb-3">Net Profit </p>
-          <input value={sum3} disabled className="rounded border shadow-black pl-2"/>
+          <input value={sum3} disabled className="rounded border shadow-black pl-2" />
         </div>
       </div>
       <div className="relative mt-20 flex justify-around font-bold text-2xl border px-3 py-10 text-blue-900">
@@ -130,32 +130,32 @@ function App() {
         </div>
         <div>
           <p className="mb-3">Net Profit </p>
-          <input value={sum4} disabled className="rounded border shadow-black pl-2"/>
+          <input value={sum4} disabled className="rounded border shadow-black pl-2" />
         </div>
       </div>
 
-<div>
-<div className="px-4 mt-4 p-2 bg-white shadow border rounded-md"> 
+      <div>
+        <div className="px-4 mt-4 p-2 bg-white shadow border rounded-md">
 
-<p className="text-green-600  text-2xl mb-4 underline">Summary:</p>
+          <p className="text-green-600  text-2xl mb-4 underline">Summary:</p>
 
-<p>Olive Oil: {sum1}</p>
-<p>Olive Tea: {sum2}</p>
-<p>Olive Pickle: {sum3}</p>
-<p>Olive Vinegar: {sum4}</p>
-<hr className="my-4"/>
-<strong>Total Profit: {sum1 + sum2 + sum3 + sum4}</strong>
-</div>
+          <p>Olive Oil: {sum1}</p>
+          <p>Olive Tea: {sum2}</p>
+          <p>Olive Pickle: {sum3}</p>
+          <p>Olive Vinegar: {sum4}</p>
+          <hr className="my-4" />
+          <strong>Total Profit: {sum1 + sum2 + sum3 + sum4}</strong>
+        </div>
 
-</div>
+      </div>
 
 
       <div className="mt-10 w-full flex justify-center">
-      <button onClick={handleSum} className="bg-green-600 px-6 py-2 text-lg  font-semibold rounded-xl shadow text-white mx-auto ">
-        Calculate
-      </button>
+        <button onClick={handleSum} className="bg-green-600 px-6 py-2 text-lg  font-semibold rounded-xl shadow text-white mx-auto ">
+          Calculate
+        </button>
       </div>
-     
+
     </div>
   )
 }
