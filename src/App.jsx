@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Horn from './assets/mixkit-car-horn-718.mp3'
 const App = () => {
 
@@ -28,19 +28,28 @@ const App = () => {
     color: 'White',
   }
   
-  const [number1, setNumber1] = useState(0);
-  const [number2, setNumber2] = useState(0);
 
-  function handleNumber1Change(event) {
+  const [number1, setNumber1] = useState(0)
+  const [number2, setNumber2] = useState(0)
+  function handleNumber1Change(event){
     setNumber1(event.target.value)
   }
-
-  function handleNumber2Change(event) {
+  function handleNumber2Change(event){
     setNumber2(event.target.value)
-
   }
+//   const [number1, setNumber1] = useState(0);
+//   const [number2, setNumber2] = useState(0);
 
-function plusplus (number1, number2){
+//   function handleNumber1Change(event) {
+//     setNumber1(event.target.value)
+//   }
+
+//   function handleNumber2Change(event) {
+//     setNumber2(event.target.value)
+
+//   }
+
+function plus (number1, number2){
 let plus = number1 + number2
 return plus
 }
@@ -56,8 +65,7 @@ return plus
       <p>Object</p>
       <p>Array</p>
       <hr />
-    <input className='rounded'>ef</input>
-    <input className='rounded'>fe</input>
+    
 
       <hr />
       <h1 className='font-bold'>Car</h1>
@@ -67,8 +75,14 @@ return plus
         <p>{HondaCivic.model}</p>
         <p>{HondaCivic.number}</p>
         <p>{HondaCivic.used}</p></div>
+<button onClick={HondaCivic.testHorn} className='bg-green-500 px-4 py-2 rounded m-4'>Test Honda Horn</button>
+<div className='my-11'>
+<input className='rounded-lg border ml-5 w-12 ' value={number1} type='number' onChange={handleNumber1Change}></input>
+<input className='rounded-lg  ml-5 border w-12 ' value={number2} type='number' onChange={handleNumber2Change}></input>
+<button className='bg-red-500 ml-5 ' onClick={plus}>sum</button>
+<input className='rounded-lg border w-12 ml-5 ' value={plus (number1, number2)} type='number'></input>
 
-      <button onClick={HondaCivic.testHorn} className='bg-green-500 px-4 py-2 rounded m-4'>Test Honda Horn</button>
+</div>
     </div>
   )
 }
