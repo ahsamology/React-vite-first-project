@@ -1,6 +1,5 @@
 import React from 'react'
 import Horn from './assets/mixkit-car-horn-718.mp3'
-
 const App = () => {
 
   const carName = "crolla"
@@ -28,7 +27,23 @@ const App = () => {
     used: 'three year by family',
     color: 'White',
   }
+  
+  const [number1, setNumber1] = useState(0);
+  const [number2, setNumber2] = useState(0);
 
+  function handleNumber1Change(event) {
+    setNumber1(event.target.value)
+  }
+
+  function handleNumber2Change(event) {
+    setNumber2(event.target.value)
+
+  }
+
+function plusplus (number1, number2){
+let plus = number1 + number2
+return plus
+}
 
 
 
@@ -41,10 +56,9 @@ const App = () => {
       <p>Object</p>
       <p>Array</p>
       <hr />
-      <p>{carName}</p>
-      <p>{studentA.name}</p>
-      <p>{studentA.regNo}</p>
-      <p>{studentA.sec}</p>
+    <input className='rounded'>ef</input>
+    <input className='rounded'>fe</input>
+
       <hr />
       <h1 className='font-bold'>Car</h1>
       <div><p>{HondaCivic.location}</p>
