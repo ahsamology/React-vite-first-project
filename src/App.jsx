@@ -31,9 +31,9 @@ const App = () => {
 
   const [number1, setNumber1] = useState(0)
   const [number2, setNumber2] = useState(0)
-  function handleNumber1Change(event) {
-    setNumber1(event.target.value)
-  }
+  
+  const handleNumber1Change = (event) => setNumber1(event.target.value)
+
   function handleNumber2Change(event) {
     setNumber2(event.target.value)
   }
@@ -54,6 +54,8 @@ const App = () => {
     let plus = Number(number1) + Number(number2)
     setPlusAnswer(plus)
   }
+
+
 
 
 
@@ -79,8 +81,8 @@ const App = () => {
       <button onClick={HondaCivic.testHorn} className='bg-green-500 px-4 py-2 rounded m-4'>Test Honda Horn</button>
       <div className='my-11'>
         <input className='rounded-lg border ml-5 w-12 ' value={number1} type='number' onChange={handleNumber1Change}></input>
-        <input className='rounded-lg  ml-5 border w-12 ' value={number2} type='number' onChange={handleNumber2Change}></input>
-        <button className='bg-red-500 ml-5 ' onClick={plus}>sum</button>
+        <input className='rounded-lg  ml-5 border w-12 ' value={number2} type='number' onChange={(event) => setNumber2(event.target.value)}></input>
+        <button className='bg-red-500 ml-5 ' onClick={() => plus('12', '14')}>sum</button>
         <input className='rounded-lg border w-12 ml-5 ' value={plusAnswer} type='number'></input>
 
       </div>
